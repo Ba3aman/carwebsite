@@ -74,7 +74,7 @@
 /* القسم */
 .about {
   padding: 100px 60px;
-  background: radial-gradient(circle at right, rgba(217,4,41,0.1), transparent);
+  background: radial-gradient(circle at right, rgb(109 55 55), transparent);
 }
 
 /* التقسيم */
@@ -193,77 +193,314 @@
   
 }
         /* Service Cards */
-        .service-card {
-            background-color: var(--dark-gray);
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 30px 20px;
-            height: 100%;
-            transition: all 0.4s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--racing-red);
-            box-shadow: 0 10px 30px rgba(217, 4, 41, 0.15);
-        }
-        .service-icon {
-            font-size: 3rem;
-            color: var(--racing-red);
-            margin-bottom: 20px;
-        }
-        .service-list {
-            list-style: none;
-            padding: 0;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-        .service-list li { margin-bottom: 8px; }
-        .service-list li i { color: var(--racing-red); margin-left: 8px; font-size: 0.8rem; }
+       .services {
+  padding: 100px 50px;
+  text-align: center;
+  background: #0f0f0f;
+}
+
+.services h2 {
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.service-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  color: white;
+  text-align: right;
+  transition: 0.4s;
+}
+
+/* Hover */
+.service-card:hover img {
+  transform: scale(1.1);
+}
+
+.service-card:hover .overlay {
+  background: rgba(0,0,0,0.85);
+}
+
+/* زر */
+.overlay button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #FF6B6B;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.service-card:hover button {
+  opacity: 1;
+}
+
+/* Glow */
+.service-card:hover {
+  box-shadow: 0 0 30px rgba(255,107,107,0.3);
+}
 
         /* Pricing Bundles */
-        .bundle-card {
-            background-color: var(--dark-gray);
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 40px 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .bundle-card.popular {
-            border: 2px solid var(--racing-red);
-            transform: scale(1.05);
-            background: linear-gradient(180deg, var(--dark-gray) 0%, #1a0808 100%);
-        }
-        .bundle-card:hover { transform: translateY(-5px); }
-        .bundle-card.popular:hover { transform: scale(1.05) translateY(-5px); }
+       .pricing {
+  padding: 100px 20px;
+  text-align: center;
+  background: #0f0f0f;
+}
 
+.pricing h2 {
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+.pricing span {
+  color: #FF6B6B;
+}
+
+/* Grid */
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.card {
+  background: #1a1a1a;
+  padding: 40px 30px;
+  border-radius: 15px;
+  width: 300px;
+  border: 1px solid #333;
+  transition: 0.4s;
+  position: relative;
+}
+
+/* Featured */
+.featured {
+  transform: scale(1.1);
+  border: 1px solid #FF6B6B;
+  box-shadow: 0 0 40px rgba(255,107,107,0.2);
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background: #FF6B6B;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+/* Price */
+.card h1 {
+  color: #FF6B6B;
+  margin: 15px 0;
+}
+
+/* List */
+.card ul {
+  list-style: none;
+  padding: 0;
+  color: #ccc;
+}
+
+.card li {
+  margin: 10px 0;
+}
+
+/* Button */
+.card button {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  background: transparent;
+  border: 1px solid #FF6B6B;
+  color: white;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.featured button {
+  background: #FF6B6B;
+}
+
+/* Hover */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(255,107,107,0.3);
+}
         /* Forms */
-        .form-control, .form-select {
-            background-color: var(--charcoal-black);
-            border: 1px solid #444;
-            color: var(--text-light);
-            padding: 12px;
-        }
-        .form-control:focus, .form-select:focus {
-            background-color: var(--charcoal-black);
-            color: var(--text-light);
-            border-color: var(--racing-red);
-            box-shadow: 0 0 0 0.25rem rgba(217, 4, 41, 0.25);
-        }
+       .booking {
+  padding: 100px 20px;
+  text-align: center;
+  background: radial-gradient(circle at top, rgba(255,107,107,0.1), transparent);
+}
+
+.booking h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.booking span {
+  color: #FF6B6B;
+}
+
+/* الصندوق */
+.booking-box {
+  max-width: 700px;
+  margin: auto;
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid #333;
+  box-shadow: 0 0 40px rgba(255,107,107,0.1);
+}
+
+/* الصفوف */
+.row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.row input,
+select {
+  flex: 1;
+}
+
+/* الحقول */
+.booking input,
+.booking select {
+  width: 100%;
+  padding: 12px;
+  background: #0f0f0f;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+/* Focus 🔥 */
+.booking input:focus,
+.booking select:focus {
+  border-color: #FF6B6B;
+  box-shadow: 0 0 10px rgba(255,107,107,0.4);
+  outline: none;
+}
+
+/* الزر */
+.booking button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  background: #FF6B6B;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.booking button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(255,107,107,0.4);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+}
 
         /* Footer */
-        footer {
-            background-color: #0a0a0a;
-            border-top: 1px solid #333;
-        }
-        .social-icons a {
-            color: var(--text-light);
-            font-size: 1.5rem;
-            margin-left: 15px;
-            transition: color 0.3s;
-        }
-        .social-icons a:hover { color: var(--racing-red); }
+       .footer {
+  background: #0a0a0a;
+  padding: 60px 20px 20px;
+  color: #aaa;
+}
 
+/* Grid */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+/* العناوين */
+.footer h3 {
+  font-size: 24px;
+}
+
+.footer h3 span {
+  color: #FF6B6B;
+}
+
+.footer h4 {
+  margin-bottom: 15px;
+  color: white;
+}
+
+/* النص */
+.footer p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* أيقونات */
+.socials {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+}
+
+.socials i {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover 🔥 */
+.socials i:hover {
+  color: #FF6B6B;
+  transform: translateY(-3px);
+}
+
+/* خط */
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 15px;
+  text-align: center;
+  border-top: 1px solid #333;
+  font-size: 13px;
+}
         /* Section Padding */
         .section-padding { padding: 100px 0; }
     
