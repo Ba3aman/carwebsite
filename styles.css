@@ -60,21 +60,62 @@
         .nav-link:hover { color: var(--racing-red) !important; }
 
         /* Hero Section */
-        .hero-section {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1613214149922-f1809c99b414?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-            padding-top: 80px;
-        }
+       .hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: linear-gradient(
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.7)
+  ),
+  url("https://images.unsplash.com/photo-1552519507-da3b142c6e3d") center/cover no-repeat;
+}
+
+/* العنوان */
+.hero-section h1 {
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.hero-section span {
+  color: #FF6B6B;
+}
+
+/* النص */
+.hero-section p {
+  color: #ccc;
+  margin: 20px 0 30px;
+  font-size: 18px;
+}
+
+/* الأزرار */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.hero-buttons .btn {
+  padding: 12px 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero-buttons .btn:hover {
+  transform: translateY(-2px);
+}
         
         /* about Section */
 
 
 /* القسم */
 .about {
-  padding: 100px 60px;
-  background: radial-gradient(circle at right, rgb(109 55 55), transparent);
+  padding: 120px 80px;
+  background: #535353;
 }
 
 /* التقسيم */
@@ -82,85 +123,69 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 60px;
-}
-
-/* الصورة */
-.about-image img {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(217,4,41,0.3);
-  transition: 0.4s;
-}
-
-.about-image img:hover {
-  transform: scale(1.05);
+  gap: 80px;
 }
 
 /* النص */
+.about-content {
+  max-width: 500px;
+}
+
 .about-content h2 {
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 800;
+  margin-bottom: 20px;
 }
 
 .about-content span {
-  color: #D90429;
+  color: #ff4d4d;
 }
 
 .about-content p {
-  color: #bbb;
-  line-height: 1.9;
-  margin: 20px 0;
+  color: #aaa;
+  line-height: 1.8;
+  margin-bottom: 25px;
 }
 
 /* المميزات */
-.features {
-  margin: 20px 0;
-}
-
 .feature {
-  margin: 10px 0;
-  font-size: 15px;
+  margin: 12px 0;
   color: #ddd;
+}
+
+/* الصورة */
+.about-image {
   position: relative;
-  padding-right: 20px;
 }
 
-.feature::before {
-  content: "✔";
+.about-image img {
+  width: 100%;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+/* Glow خلف الصورة 🔥 */
+.about-image::before {
+  content: "";
   position: absolute;
-  right: 0;
-  color: #D90429;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,0,0,0.4), transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(80px);
+  z-index: 0;
 }
 
-/* زر */
-.about-btn {
-  margin-top: 20px;
-  background: #D90429;
-  border: none;
-  padding: 12px 25px;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+.about-image img {
+  position: relative;
+  z-index: 1;
 }
 
-.about-btn:hover {
-  background: #a1031f;
-  transform: translateY(-3px);
+.about-image img:hover {
+  transform: scale(1.03);
 }
-
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 
 /* 📱 Responsive للجوال */
 @media (max-width: 768px) {
@@ -193,30 +218,33 @@
   
 }
         /* Service Cards */
-       .services {
-  padding: 100px 50px;
+     .services {
+  padding: 120px 80px;
+  background: rgb(38 33 33);
   text-align: center;
-  background: #0f0f0f;
 }
 
 .services h2 {
-  font-size: 40px;
+  font-size: 36px;
   margin-bottom: 50px;
 }
 
+/* Grid */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 50px;
 }
 
+/* Card */
 .service-card {
   position: relative;
+  border-radius: 20px;
   overflow: hidden;
-  border-radius: 15px;
   cursor: pointer;
 }
 
+/* صورة */
 .service-card img {
   width: 100%;
   height: 300px;
@@ -225,15 +253,22 @@
 }
 
 /* Overlay */
-.overlay {
+.content {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-  color: white;
+  padding: 25px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
   text-align: right;
-  transition: 0.4s;
+}
+
+.content h3 {
+  margin: 0;
+}
+
+.content p {
+  font-size: 14px;
+  color: #ccc;
 }
 
 /* Hover */
@@ -241,29 +276,10 @@
   transform: scale(1.1);
 }
 
-.service-card:hover .overlay {
-  background: rgba(0,0,0,0.85);
-}
-
-/* زر */
-.overlay button {
-  margin-top: 10px;
-  padding: 8px 15px;
-  background: #FF6B6B;
-  border: none;
-  color: white;
-  border-radius: 6px;
-  opacity: 0;
-  transition: 0.3s;
-}
-
-.service-card:hover button {
-  opacity: 1;
-}
-
-/* Glow */
-.service-card:hover {
-  box-shadow: 0 0 30px rgba(255,107,107,0.3);
+/* Highlight */
+.featured {
+  border: 2px solid #FF6B6B;
+  box-shadow: 0 0 25px rgba(255,107,107,0.3);
 }
 
         /* Pricing Bundles */
@@ -271,6 +287,10 @@
   padding: 100px 20px;
   text-align: center;
   background: #0f0f0f;
+}
+
+.card h3 {
+  color: #e5e5e5;
 }
 
 .pricing h2 {
