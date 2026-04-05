@@ -68,10 +68,9 @@
   text-align: center;
 
   background: linear-gradient(
-    rgba(0,0,0,0.6),
+    rgba(17, 16, 16, 0.6),
     rgba(0,0,0,0.7)
   ),
-  url("https://images.unsplash.com/photo-1552519507-da3b142c6e3d") center/cover no-repeat;
 }
 
 /* العنوان */
@@ -115,7 +114,7 @@
 /* القسم */
 .about {
   padding: 120px 80px;
-  background: #535353;
+  background: #fffffff3;
 }
 
 /* التقسيم */
@@ -135,14 +134,15 @@
   font-size: 48px;
   font-weight: 800;
   margin-bottom: 20px;
+   color: #000000;
 }
 
 .about-content span {
-  color: #ff4d4d;
+  color: #d90429;
 }
 
 .about-content p {
-  color: #aaa;
+  color: #080202;
   line-height: 1.8;
   margin-bottom: 25px;
 }
@@ -150,7 +150,7 @@
 /* المميزات */
 .feature {
   margin: 12px 0;
-  color: #ddd;
+  color: #000000;
 }
 
 /* الصورة */
@@ -220,7 +220,7 @@
         /* Service Cards */
      .services {
   padding: 120px 80px;
-  background: rgb(38 33 33);
+  background: rgb(15, 15, 15);
   text-align: center;
 }
 
@@ -278,8 +278,7 @@ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
 /* Highlight */
 .featured {
-  border: 2px solid #FF6B6B;
-  box-shadow: 0 0 25px rgba(255,107,107,0.3);
+  border: 2px solid #000000;
 }
 
         /* Pricing Bundles */
@@ -324,8 +323,7 @@ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 /* Featured */
 .featured {
   transform: scale(1.1);
-  border: 1px solid #FF6B6B;
-  box-shadow: 0 0 40px rgba(255,107,107,0.2);
+  border: 1px solid #ffffff;
 }
 
 /* Badge */
@@ -339,34 +337,7 @@ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   border-radius: 5px;
 }
 
-/* Price */
-.card h1 {
-  color: #FF6B6B;
-  margin: 15px 0;
-}
 
-/* List */
-.card ul {
-  list-style: none;
-  padding: 0;
-  color: #ccc;
-}
-
-.card li {
-  margin: 10px 0;
-}
-
-/* Button */
-.card button {
-  margin-top: 20px;
-  padding: 10px;
-  width: 100%;
-  background: transparent;
-  border: 1px solid #FF6B6B;
-  color: white;
-  border-radius: 6px;
-  transition: 0.3s;
-}
 
 .featured button {
   background: #FF6B6B;
@@ -381,16 +352,17 @@ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
        .booking {
   padding: 100px 20px;
   text-align: center;
-  background: radial-gradient(circle at top, rgba(255,107,107,0.1), transparent);
+  background: #e5e5e5;
 }
 
 .booking h2 {
   font-size: 40px;
   margin-bottom: 40px;
+   color: #000000;
 }
 
 .booking span {
-  color: #FF6B6B;
+  color: #d90429;
 }
 
 /* الصندوق */
@@ -400,8 +372,8 @@ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   background: #1a1a1a;
   padding: 40px;
   border-radius: 15px;
-  border: 1px solid #333;
-  box-shadow: 0 0 40px rgba(255,107,107,0.1);
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
 }
 
 /* الصفوف */
@@ -409,6 +381,7 @@ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   display: flex;
   gap: 15px;
   margin-bottom: 15px;
+  color: white;
 }
 
 .row input,
@@ -431,7 +404,7 @@ select {
 /* Focus 🔥 */
 .booking input:focus,
 .booking select:focus {
-  border-color: #FF6B6B;
+  border-color: #ffffff;
   box-shadow: 0 0 10px rgba(255,107,107,0.4);
   outline: none;
 }
@@ -441,9 +414,9 @@ select {
   width: 100%;
   padding: 14px;
   margin-top: 20px;
-  background: #FF6B6B;
+  background: #fff9f9e3;
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
   border-radius: 8px;
   font-size: 18px;
   transition: 0.3s;
@@ -451,7 +424,7 @@ select {
 
 .booking button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 20px rgba(255,107,107,0.4);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.863);
 }
 
 /* 📱 Responsive */
